@@ -1,0 +1,25 @@
+# This directory contains dynamically loaded translation plugins.
+# Place .py files here that implement the Translator interface from translation.translator.
+#
+# Example (file: plugins/my_translator.py):
+#
+#   from translation.translator import Translator
+#
+#   class MyTranslator(Translator):
+#       @property
+#       def name(self) -> str:
+#           return "MyTranslator"
+#
+#       @property
+#       def source_language(self) -> str:
+#           return "en"
+#
+#       @property
+#       def target_language(self) -> str:
+#           return "pt"
+#
+#       def translate(self, text: str) -> str:
+#           return f"[translated] {text}"
+#
+# The plugin will be automatically discovered and loaded at startup.
+# If no plugin is found, the GenericTranslator (pass-through) is used.

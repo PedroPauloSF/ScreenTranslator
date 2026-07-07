@@ -1,0 +1,30 @@
+# Build output
+dist/
+build/
+*.spec.bak
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Virtual environment
+venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# App runtime files
+settings.json
+logs/
+*.log
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# PyInstaller
+*.spec
