@@ -12,6 +12,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from utils.paths import app_data_dir
+
 
 def setup_logging(log_dir: Path | None = None, level: int = logging.DEBUG) -> None:
     """Configure root logger with console and file handlers.
@@ -23,7 +25,7 @@ def setup_logging(log_dir: Path | None = None, level: int = logging.DEBUG) -> No
         level: Minimum log level to capture.
     """
     if log_dir is None:
-        log_dir = Path(__file__).resolve().parent.parent / "logs"
+        log_dir = app_data_dir("logs")
 
     log_dir.mkdir(parents=True, exist_ok=True)
 

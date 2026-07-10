@@ -12,6 +12,8 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional
 
+from utils.paths import app_root
+
 SETTINGS_FILENAME: str = "settings.json"
 
 
@@ -44,8 +46,8 @@ class OverlaySettings:
     margin_horizontal: int = 12
     margin_vertical: int = 8
     line_spacing: float = 1.4
-    text_color: str = "#FFFFFF"
-    background_color: str = "#000000"
+    text_color: str = "#000000"
+    background_color: str = "#FFFFFF"
 
 
 @dataclass
@@ -115,7 +117,7 @@ class AppSettings:
 
 def _settings_path() -> Path:
     """Return the absolute path to the settings JSON file."""
-    return Path(__file__).resolve().parent.parent / SETTINGS_FILENAME
+    return app_root() / SETTINGS_FILENAME
 
 
 def get_settings() -> AppSettings:
